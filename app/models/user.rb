@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
 
 	#downcase email prior to saving to DB
 	before_save { self.email = email.downcase }

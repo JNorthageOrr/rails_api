@@ -8,9 +8,16 @@ Things you may want to cover:
 * Ruby version
 
 * System dependencies
+- gem 'knock'
 
 * Configuration
 
+- knock install/ config:
+	- rails g knock:install
+	- rails g knock:token_controller user
+	- In app/controllers/application_controller.rb:
+		-   include Knock::Authenticable 
+	- 
 * Database creation
 
 * Database initialization

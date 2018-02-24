@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.6'
+gem 'rails', '5.1.5'
+#gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.20.0'
 # Use SCSS for stylesheets
@@ -28,6 +29,10 @@ gem 'bcrypt', '~> 3.1.11'
 
 # Use bootstrap
 gem 'bootstrap-sass', '3.3.7'
+
+# Use Knock (jwt) for talking to front end react
+gem 'knock'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
