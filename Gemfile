@@ -37,6 +37,9 @@ gem 'bootstrap-sass', '3.3.7'
 # Use Knock (jwt) for talking to front end react
 gem 'knock'
 
+# Use rack-cors gem for CORS configuration
+gem 'rack-cors'
+
 # Use Unicorn as the app server
 gem 'unicorn'
 
