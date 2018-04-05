@@ -12,6 +12,16 @@ module RailsApi
     config.load_defaults 5.1
 
     #enable CORS for React front end app:
+    Rails.application.config.middleware.insert_before 0, Rack::Cors do
+    	allow do
+    		origins 'localhost:5000'
+    		resources '*',
+    		headers: :any,
+    		methods: %i(get post options head)
+    	end
+    end
+
+    # old CORS config
     #config.action_dispatch.default_headers = {
     #	'Access-Control-Allow-Origin' => 'http://localhost:5000',
     # 	'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
