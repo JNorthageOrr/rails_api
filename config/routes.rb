@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   scope '/api' do 
     resources :patterns
-    resources :users
     post 'user_token' => 'user_token#create'
     post '/signup', to: 'users#create'
   end

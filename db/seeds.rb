@@ -15,8 +15,13 @@ admin.password_confirmation = 'bananaKing'
 admin.save
 
 user = User.new
-admin.name = 'Banana Bro'
+user.name = 'Banana Bro'
 user.email = 'user@bananas.com'
 user.password = 'bananaBro'
 user.password_confirmation = 'bananaBro'
 user.save
+
+pattern = Pattern.new
+pattern.name = 'seed'
+pattern.location = 'seed location'
+pattern.save

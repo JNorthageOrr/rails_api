@@ -38,7 +38,7 @@ gem 'bootstrap-sass', '3.3.7'
 gem 'knock'
 
 # Use Unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
