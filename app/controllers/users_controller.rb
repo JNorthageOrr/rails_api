@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         if @user.save
     		redirect_to :user_token => 'post', :action => 'create'
       	else 
-      		render (:json => {:state => {:code => 1, :messages => @user.errors.full_messages} })
+      		render :json => {:errors => @user.errors.full_messages }, :status => 422
       	end
       }
     end
