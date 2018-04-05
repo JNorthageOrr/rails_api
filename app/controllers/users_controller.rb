@@ -10,12 +10,23 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.new(user_params)
-  	if @user.save
-  		#flash[:success] = "Welcome, thanks for registering!"
-  		redirect_to :user_token => 'post', :action => 'create'
-  	else 
-  		render 'new'
-  	end
+    respond_to do |format|
+      format.html {
+        if @user.save
+          flash[:success] = "Welcome, thanks for registering!"
+          redirect_to @user
+        else 
+          render 'new'
+        end  
+      }
+  	  format.json {
+        if @user.save
+    		redirect_to :user_token => 'post', :action => 'create'
+      	else 
+      		render (:json => {:state => {:code => 1, :messages => @user.errors.full_messages} })
+      	end
+      }
+    end
   end
 
   #use Strong Parameters to sanitize user input
