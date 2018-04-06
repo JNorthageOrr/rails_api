@@ -1,0 +1,13 @@
+Notes:
+
+Registering user params sent from RoR /users/create form:
+
+{ 
+  "utf8"=>"✓", 
+  "authenticity_token"=>"Id0Fh9ni7bimw8UZ9OUGhrMIVZdtaEUnKC0YvPrKVxfFWEF1njgSR6EZBnW1ICjSrWr4LFVd0DF9Yh4BgSqWIg==", 
+  "user" => { 
+  	"name" => "Test User", 
+  	"email"=>"test@user.com", 
+  	"password"=>"[FILTERED]", 
+  	"password_confirmation"=>"[FILTERED]"}, 
+  "commit"=>"Create my account"}

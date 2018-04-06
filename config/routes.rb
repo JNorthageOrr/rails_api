@@ -10,16 +10,15 @@ Rails.application.routes.draw do
   #get '/help',    to: 'static_pages#help'
   #get '/about',   to: 'static_pages#about'
   #get '/contact', to: 'static_pages#contact'
-  #get '/signup',  to: 'users#new'
-  #get '/signup',  to: 'users#create'
-  #post '/signup', to: 'users#create'
+  get '/users/new',  to: 'users#new'
+  post '/users/new', to: 'users#create'
 
   # Config after API conversion
 
   scope '/api' do 
     resources :patterns
     post 'user_token' => 'user_token#create'
-    post 'signup' => 'users#create'
+    #post 'signup' => 'users#create'
   end
 
 end
