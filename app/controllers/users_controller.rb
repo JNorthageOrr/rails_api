@@ -18,14 +18,14 @@ class UsersController < ApplicationController
           render :json => {:errors => @user.errors.full_messages }, :status => 422
         end
       }
-      format.html {
-        if @user.save
-          flash[:success] = "Welcome, thanks for registering!"
-          redirect_to @user
-        else 
-          render 'new'
-        end  
-      }
+      #format.html {
+      #  if @user.save
+      #    flash[:success] = "Welcome, thanks for registering!"
+      #    redirect_to @user
+      #  else 
+      #    render 'new'
+      #  end  
+      #}
     end
   end
 
