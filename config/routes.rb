@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :patterns
     post 'user_token' => 'user_token#create'
     get '/users/new',  to: 'users#new'
-    post '/users/new', to: 'users#create'
+    post '/users', to: 'users#create'
     #post 'signup' => 'users#create'
   end
 
