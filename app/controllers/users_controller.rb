@@ -11,6 +11,13 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
     respond_to do |format|
+      format.json {
+        if @user.save
+        redirect_to :user_token => 'post', :action => 'create'
+        else 
+          render :json => {:errors => @user.errors.full_messages }, :status => 422
+        end
+      }
       format.html {
         if @user.save
           flash[:success] = "Welcome, thanks for registering!"
@@ -18,13 +25,6 @@ class UsersController < ApplicationController
         else 
           render 'new'
         end  
-      }
-  	  format.json {
-        if @user.save
-    		redirect_to :user_token => 'post', :action => 'create'
-      	else 
-      		render :json => {:errors => @user.errors.full_messages }, :status => 422
-      	end
       }
     end
   end
